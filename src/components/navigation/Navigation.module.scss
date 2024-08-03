@@ -1,0 +1,30 @@
+.container {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+
+	button {
+		width: 60px;
+		height: 60px;
+		z-index: 10;
+	}
+}
+
+.yButtons {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.xButtons {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
