@@ -1,44 +1,5 @@
 .container {
+	position: relative;
 	width: 100vw;
 	height: 100vh;
-}
-
-.home {
-	border: 1px solid red;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-}
-
-.about {
-	border: 1px solid blue;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-
-	position: absolute;
-	top: 0;
-	left: -100%;
-}
-
-.projects {
-	border: 1px solid green;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-
-	position: absolute;
-	top: 0;
-	left: 100%;
-}
-
-.socialFeed {
-	border: 1px solid yellow;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-
-	position: absolute;
-	top: 100%;
-	left: 0;
 }

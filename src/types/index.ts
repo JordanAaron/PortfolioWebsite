@@ -1,7 +1,1 @@
-export type View =
-	| 'topMid'
-	| 'topRight'
-	| 'topLeft'
-	| 'bottomMid'
-	| 'bottomRight'
-	| 'bottomLeft'
+export type View = 'home' | 'projects' | 'about' | 'blog' | 'feed'

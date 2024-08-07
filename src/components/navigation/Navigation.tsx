@@ -1,40 +1,37 @@
-import styles from './Navigation.module.scss'
-
 import { View } from '@/types'
+
+import styles from './Navigation.module.scss'
 
 interface NavigationProps {
 	view: View
 	setView: (view: View) => void
+	setButtonClicked: (button: string) => void
 }
 
-export const Navigation = ({ view, setView }: NavigationProps): JSX.Element => {
+export const Navigation = ({
+	view,
+	setView,
+	setButtonClicked,
+}: NavigationProps): JSX.Element => {
 	const handleClick = (button: string) => {
 		const viewMap: Record<View, Record<string, View>> = {
-			topMid: {
-				right: 'topRight',
-				left: 'topLeft',
-				down: 'bottomMid',
+			home: {
+				up: 'feed',
+				down: 'projects',
+				left: 'about',
+				right: 'blog',
 			},
-			topRight: {
-				left: 'topMid',
-				down: 'bottomRight',
+			about: {
+				right: 'home',
 			},
-			topLeft: {
-				right: 'topMid',
-				down: 'bottomLeft',
+			projects: {
+				up: 'home',
 			},
-			bottomMid: {
-				right: 'bottomRight',
-				left: 'bottomLeft',
-				up: 'topMid',
+			feed: {
+				down: 'home',
 			},
-			bottomRight: {
-				left: 'bottomMid',
-				up: 'topRight',
-			},
-			bottomLeft: {
-				right: 'bottomMid',
-				up: 'topLeft',
+			blog: {
+				left: 'home',
 			},
 		}
 
@@ -42,26 +39,77 @@ export const Navigation = ({ view, setView }: NavigationProps): JSX.Element => {
 		if (nextView) {
 			setView(nextView)
 		}
+		setButtonClicked(button)
 	}
 
-	return (
-		<nav className={styles.container}>
-			<div className={styles.yButtons}>
-				<button className={styles.up} onClick={() => handleClick('up')}>
-					Up
-				</button>
-				<button className={styles.down} onClick={() => handleClick('down')}>
+	switch (view) {
+		case 'feed':
+			return (
+				<button
+					className={`${styles.down} ${styles.button}`}
+					onClick={() => handleClick('down')}
+				>
 					Down
 				</button>
-			</div>
-			<div className={styles.xButtons}>
-				<button className={styles.left} onClick={() => handleClick('left')}>
+			)
+
+		case 'blog':
+			return (
+				<button
+					className={`${styles.left} ${styles.button}`}
+					onClick={() => handleClick('left')}
+				>
 					Left
 				</button>
-				<button className={styles.right} onClick={() => handleClick('right')}>
+			)
+
+		case 'projects':
+			return (
+				<button
+					className={`${styles.up} ${styles.button}`}
+					onClick={() => handleClick('up')}
+				>
+					Up
+				</button>
+			)
+
+		case 'about':
+			return (
+				<button
+					className={`${styles.right} ${styles.button}`}
+					onClick={() => handleClick('right')}
+				>
 					Right
 				</button>
-			</div>
-		</nav>
-	)
+			)
+		default:
+			return (
+				<>
+					<button
+						className={`${styles.up} ${styles.button}`}
+						onClick={() => handleClick('up')}
+					>
+						Up
+					</button>
+					<button
+						className={`${styles.down} ${styles.button}`}
+						onClick={() => handleClick('down')}
+					>
+						Down
+					</button>
+					<button
+						className={`${styles.left} ${styles.button}`}
+						onClick={() => handleClick('left')}
+					>
+						Left
+					</button>
+					<button
+						className={`${styles.right} ${styles.button}`}
+						onClick={() => handleClick('right')}
+					>
+						Right
+					</button>
+				</>
+			)
+	}
 }
