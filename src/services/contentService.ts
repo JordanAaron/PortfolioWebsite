@@ -1,1 +1,1 @@
-const getContent = () => {}
+const getContent = () => {};
