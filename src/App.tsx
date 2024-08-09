@@ -11,8 +11,6 @@ function App() {
   const [yMove, setYMove] = useState(0);
 
   useEffect(() => {
-    console.log(buttonClicked);
-
     if (buttonClicked === "up") {
       setYMove(yMove + 100);
     } else if (buttonClicked === "down") {
@@ -55,6 +53,6 @@ function App() {
 export default App;
 
 /**
- * Home, About, Projects, Social Feed
+ * Home, About, Projects, Social Feed, Blog
  * Github, LinkedIn, Email, Resume
  */
