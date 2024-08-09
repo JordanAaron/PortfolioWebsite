@@ -44,11 +44,12 @@ export const Navigation = ({
       },
     };
 
+    setButtonClicked(button);
+
     const nextView = viewMap[view][button];
     if (nextView) {
       setView(nextView);
     }
-    setButtonClicked(button);
   };
 
   switch (view) {
