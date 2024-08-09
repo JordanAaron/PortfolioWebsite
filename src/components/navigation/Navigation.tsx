@@ -15,6 +15,8 @@ interface NavigationProps {
   setButtonClicked: (button: string) => void;
 }
 
+// TODO: Add tooltips
+
 export const Navigation = ({
   view,
   setView,
