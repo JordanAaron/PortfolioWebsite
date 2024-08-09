@@ -1,0 +1,72 @@
+@use "@/styles/breakpoints" as breakpoint;
+
+.container {
+  @include breakpoint.for-medium-up {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 8rem;
+    height: 8rem;
+
+    margin: 0 1rem;
+    z-index: 10;
+  }
+}
+
+.button {
+  position: absolute;
+  z-index: 10;
+
+  border: none;
+  background-color: transparent;
+
+  svg {
+    margin: auto;
+  }
+
+  p {
+    @include breakpoint.for-medium-up {
+      display: none;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @include breakpoint.for-medium-up {
+    background-color: #1b1b1b;
+    color: white;
+
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+  }
+}
+
+.up {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.down {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+}
+
+.right {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+}
