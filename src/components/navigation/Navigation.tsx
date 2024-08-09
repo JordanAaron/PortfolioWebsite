@@ -52,50 +52,56 @@ export const Navigation = ({
   switch (view) {
     case "feed":
       return (
-        <button
-          className={`${styles.down} ${styles.button}`}
-          onClick={() => handleClick("down")}
-        >
-          <p>Home</p>
-          <ChevronDown />
-        </button>
+        <nav className={styles.container}>
+          <button
+            className={`${styles.down} ${styles.button}`}
+            onClick={() => handleClick("down")}
+          >
+            <p>Home</p>
+            <ChevronDown />
+          </button>
+        </nav>
       );
 
     case "blog":
       return (
-        <button
-          className={`${styles.left} ${styles.button}`}
-          onClick={() => handleClick("left")}
-        >
-          <ChevronLeft />
-          <p>Home</p>
-        </button>
+        <nav className={styles.container}>
+          <button
+            className={`${styles.left} ${styles.button}`}
+            onClick={() => handleClick("left")}
+          >
+            <ChevronLeft />
+            <p>Home</p>
+          </button>
+        </nav>
       );
-
     case "projects":
       return (
-        <button
-          className={`${styles.up} ${styles.button}`}
-          onClick={() => handleClick("up")}
-        >
-          <p>Home</p>
-          <ChevronUp />
-        </button>
+        <nav className={styles.container}>
+          <button
+            className={`${styles.up} ${styles.button}`}
+            onClick={() => handleClick("up")}
+          >
+            <ChevronUp />
+            <p>Home</p>
+          </button>
+        </nav>
       );
-
     case "about":
       return (
-        <button
-          className={`${styles.right} ${styles.button}`}
-          onClick={() => handleClick("right")}
-        >
-          <p>Home</p>
-          <ChevronRight />
-        </button>
+        <nav className={styles.container}>
+          <button
+            className={`${styles.right} ${styles.button}`}
+            onClick={() => handleClick("right")}
+          >
+            <p>Home</p>
+            <ChevronRight />
+          </button>
+        </nav>
       );
     default:
       return (
-        <>
+        <nav className={styles.container}>
           <button
             className={`${styles.up} ${styles.button}`}
             onClick={() => handleClick("up")}
@@ -124,7 +130,7 @@ export const Navigation = ({
             <p>Blog</p>
             <ChevronRight />
           </button>
-        </>
+        </nav>
       );
   }
 };
