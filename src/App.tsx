@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Navigation, Section } from "@/components";
+import { HomeSection, Navigation, Section } from "@/components";
 import { View } from "@/types";
 
 import styles from "./App.module.scss";
@@ -31,7 +31,7 @@ function App() {
       />
       <main className={styles.container}>
         <Section xPos={0} yPos={0} moveX={xMove} moveY={yMove}>
-          Home
+          <HomeSection />
         </Section>
         <Section xPos={100} yPos={0} moveX={xMove} moveY={yMove}>
           Blog
